@@ -1,0 +1,147 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    
+
+    width: 100%;
+    height: 100%;
+
+    background-color: #1a1a1a;
+}
+header{
+    width: 100%;
+
+    background-color: #131111;
+
+    padding: 10px 20px;
+
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+.navbar{
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+
+    padding:0 20px;
+
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    text-align: center;
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
+}
+.Hamburguer{
+    width: 50px;
+    height: 50px;
+
+    border-radius: 10%;
+
+    position: relative;
+    display: none;
+}
+.Hamburguer:after{
+    content: '';
+
+    position: absolute;
+    top: 30%;
+    left: 15%;
+
+    width: 70%;
+    height: 10%;
+
+    border-radius: 20px;
+
+    background-color: #fff;
+    
+    transition: 1s ease;
+}
+.Hamburguer:before{
+    content: '';
+
+    position: absolute;
+    top: 60%;
+    left: 45%;
+
+    width: 40%;
+    height: 10%;
+
+    border-radius: 20px;
+
+    background-color: #fff;
+
+    transition: 1s ease;
+}
+#Hamburguer:checked ~ label .Hamburguer::after{
+    transform: rotate(225deg);
+    top: 45%;
+    left: 15%;
+
+}
+#Hamburguer:checked ~ label .Hamburguer:before{
+    transform: rotate(-225deg);
+
+    width: 70%;
+    height: 10%;
+
+    top: 45%;
+    left: 15%;
+}
+
+.menu{
+    list-style: none;
+    
+    display: flex;
+    align-items: center;
+
+    li{
+        margin-left: 10px;
+        a {
+            display: block;
+            padding: 10px 15px;
+            text-decoration:none;
+            color: rgb(58, 56, 56);
+            transition: 0.5s;
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+}
+@media screen and (max-width: 980px) {
+    .Hamburguer{
+        display: block;
+        z-index: 999;
+    }
+    .menu{
+        position: fixed;
+        top: 0;
+        right: -100%;
+
+        height: 100vh;
+        margin: 0;
+        background-color: #222;
+
+        width: 100%;
+        max-width: 250px;
+
+        padding: 100px 20px;
+        flex-direction: column;
+
+        transition: 0.5s ease;
+    }
+    .menu.active{
+        right: 0;
+    }
+}

@@ -1,0 +1,149 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a1a;
+}
+
+header {
+  width: 100%;
+  background-color: #131111;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;  
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  text-align: center;
+
+}
+
+.Hamburguer {
+  width: 50px;
+  height: 50px;
+  border-radius: 10%;
+  position: relative;
+  display: none;
+}
+
+.Hamburguer:after {
+  content: '';
+  position: absolute;
+  top: 30%;
+  left: 15%;
+  width: 70%;
+  height: 10%;
+  border-radius: 20px;
+  background-color: #fff;
+  -webkit-transition: 1s ease;
+  transition: 1s ease;
+}
+
+.Hamburguer:before {
+  content: '';
+  position: absolute;
+  top: 60%;
+  left: 45%;
+  width: 40%;
+  height: 10%;
+  border-radius: 20px;
+  background-color: #fff;
+  -webkit-transition: 1s ease;
+  transition: 1s ease;
+}
+
+#Hamburguer:checked ~ label .Hamburguer::after {
+  -webkit-transform: rotate(225deg);
+          transform: rotate(225deg);
+  top: 45%;
+  left: 15%;
+}
+
+#Hamburguer:checked ~ label .Hamburguer:before {
+  -webkit-transform: rotate(-225deg);
+          transform: rotate(-225deg);
+  width: 70%;
+  height: 10%;
+  top: 45%;
+  left: 15%;
+}
+
+.menu {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu li {
+  margin-left: 10px;
+}
+
+.menu li a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #3a3838;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.menu li a:hover {
+  color: #fff;
+}
+
+@media screen and (max-width: 980px) {
+  .Hamburguer {
+    display: block;
+    z-index: 999;
+  }
+  .menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    margin: 0;
+    background-color: #222;
+    width: 100%;
+    max-width: 250px;
+    padding: 100px 20px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
+  }
+  .menu.active {
+    right: 0;
+  }
+}
+/*# sourceMappingURL=style.css.map */
